@@ -1,79 +1,13 @@
-<ul nz-menu nzMode="inline">
-  <li nz-submenu nzTitle="Navigation One" nzIcon="mail" nzOpen>
-    <ul>
-      <li nz-menu-group nzTitle="Item 1">
-        <ul>
-          <li nz-menu-item nzSelected>Option 1</li>
-          <li nz-menu-item>Option 2</li>
-        </ul>
-      </li>
-      <li nz-menu-group nzTitle="Item 2">
-        <ul>
-          <li nz-menu-item>Option 3</li>
-          <li nz-menu-item>Option 4</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li nz-submenu nzTitle="Navigation Two" nzIcon="appstore">
-    <ul>
-      <li nz-menu-item>Option 5</li>
-      <li nz-menu-item>Option 6</li>
-      <li nz-submenu nzTitle="Submenu">
-        <ul>
-          <li nz-menu-item>Option 7</li>
-          <li nz-menu-item>Option 8</li>
-          <li nz-submenu nzTitle="Submenu">
-            <ul>
-              <li nz-menu-item>Option 9</li>
-              <li nz-menu-item>Option 10</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li nz-submenu nzTitle="Navigation Three" nzIcon="setting">
-    <ul>
-      <li nz-menu-item>Option 11</li>
-      <li nz-menu-item>Option 12</li>
-      <li nz-menu-item>Option 13</li>
-    </ul>
-  </li>
-</ul>
+<app-head></app-head>
 <div class="index_wrap">
   <div class="order">
-    <ul>
-      <li>
-        <a [routerLink]="[ '/index/classMg/index' ]" routerLinkActive="active">班级管理</a>
-      </li>
-      <li>
-        <a [routerLink]="[ '/index/classMg/infoList' ]" routerLinkActive="active">信息列表</a>
-      </li>
-      <li>
-        <a [routerLink]="[ '/index/classMg/releaseInfo' ]" routerLinkActive="active">发布信息</a>
-      </li>
-      <li>
-        <a [routerLink]="[ '/index/classMg/addClass' ]" routerLinkActive="active">添加班级</a>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <a [routerLink]="[ '/index/studentMg/index' ]" routerLinkActive="active">学生管理</a>
-      </li>
-      <li>
-        <a [routerLink]="[ '/index/studentMg/addStudent' ]" routerLinkActive="active">添加学生</a>
-      </li>
-      <li>
-        <a [routerLink]="[ '/index/studentMg/watchParent' ]" routerLinkActive="active">查看家长</a>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <a [routerLink]="[ '/index/teacherMg/index' ]" routerLinkActive="active">老师管理</a>
-      </li>
-      <li>
-        <a [routerLink]="[ '/index/teacherMg/addTeacher' ]" routerLinkActive="active">添加老师</a>
+    <ul nz-menu nzMode="inline">
+      <li nz-menu-group [nzTitle]="item.title" *ngFor="let item of menuData">
+        <ul>
+          <li nz-menu-item *ngFor="let itemIn of item.children">
+            <a [routerLink]="[ itemIn.link ]" [routerLinkActive]="itemIn.activeClass">{{ itemIn.name }}</a>
+          </li>
+        </ul>
       </li>
     </ul>
   </div>
