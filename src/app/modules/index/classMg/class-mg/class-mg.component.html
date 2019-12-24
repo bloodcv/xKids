@@ -1,19 +1,30 @@
 <div class="class_mg_wrap">
-  <nz-table #ajaxTable nzShowSizeChanger [nzFrontPagination]="false" [nzData]="listOfData" [nzLoading]="loading"
-    [nzTotal]="total" [(nzPageIndex)]="pageIndex" [(nzPageSize)]="pageSize" (nzPageIndexChange)="searchData()"
-    (nzPageSizeChange)="searchData(true)">
-    <thead (nzSortChange)="sort($event)" nzSingleSort>
+  <nz-table #testTable nzSize="small" [nzData]="testData">
+    <thead>
       <tr>
-        <th nzShowSort nzSortKey="name">Name</th>
-        <th nzShowFilter [nzFilters]="filterGender" (nzFilterChange)="updateFilter($event)">Gender</th>
-        <th nzShowSort nzSortKey="email"><span>Email</span></th>
+        <th nzAlign="center">编号</th>
+        <th>学校</th>
+        <th>班级</th>
+        <th>类别</th>
+        <th>讲师</th>
+        <th>助教</th>
+        <th>创建日期</th>
+        <th nzAlign="center">管理</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let data of ajaxTable.data">
-        <td>{{ data.name.first }} {{ data.name.last }}</td>
-        <td>{{ data.gender }}</td>
-        <td>{{ data.email }}</td>
+      <tr *ngFor="let item of testTable.data">
+        <td nzAlign="center">{{ item.key }}</td>
+        <td>{{ item.schoool }}</td>
+        <td>{{ item.class }}</td>
+        <td>{{ item.type }}</td>
+        <td>{{ item.teacher }}</td>
+        <td>{{ item.helper }}</td>
+        <td>{{ item.create }}</td>
+        <td nzAlign="center" nzRight="0px" class="action_wrap">
+          <button nz-button nzType="primary" nzSize="small">信息</button>
+          <button nz-button nzType="primary" nzSize="small">学生</button>
+        </td>
       </tr>
     </tbody>
   </nz-table>
