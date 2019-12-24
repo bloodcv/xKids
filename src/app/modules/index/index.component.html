@@ -1,17 +1,22 @@
-<app-head></app-head>
-<div class="index_wrap">
-  <div class="order">
-    <ul nz-menu nzMode="inline">
-      <li nz-menu-group [nzTitle]="item.title" *ngFor="let item of menuData">
-        <ul>
-          <li nz-menu-item *ngFor="let itemIn of item.children">
-            <a [routerLink]="[ itemIn.link ]" [routerLinkActive]="itemIn.activeClass">{{ itemIn.name }}</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <div class="detail">
-    <router-outlet></router-outlet>
-  </div>
-</div>
+<nz-layout class="index_wrap">
+  <nz-header class="head_wrap">
+    <app-head></app-head>
+  </nz-header>
+  <nz-layout class="body_wrap">
+    <nz-sider class="sider_wrap">
+      <ul nz-menu nzMode="inline" nzTheme="dark">
+        <!-- <li nz-menu-group [nzTitle]="item.title" *ngFor="let item of menuData"> -->
+          <ul *ngFor="let item of menuData" class="item_wrap">
+            <li nz-menu-item *ngFor="let itemIn of item.children; let idx = index">
+              <a [routerLink]="[ itemIn.link ]" [routerLinkActive]="itemIn.activeClass">{{ itemIn.name }}</a>
+            </li>
+          </ul>
+        <!-- </li> -->
+      </ul>
+    </nz-sider>
+    <nz-content class="content_wrap">
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+  <!-- <nz-footer>Footer</nz-footer> -->
+</nz-layout>
