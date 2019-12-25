@@ -1,0 +1,14 @@
+.release_info_wrap {
+  .form_wrap {
+    width: 20%;
+    min-width: 450px;
+    .release_info_form_button_wrap {
+      .release_info_form_button {
+        &:nth-child(1) {
+          margin-right: 10%;
+        }
+        width: 45%;
+      }
+    }
+  }
+}
