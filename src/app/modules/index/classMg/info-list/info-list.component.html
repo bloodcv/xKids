@@ -1,4 +1,14 @@
 <div class="info_list_wrap">
+  <div nz-row class="head">
+    <div nz-col nzSpan="12" class="left_part">
+      <nz-select [(ngModel)]="selectedValue" [nzShowSearch]="true" ngSize="large" nzPlaceHolder="请选择">
+        <nz-option *ngFor="let item of secData" [nzValue]="item.value" [nzLabel]="item.label"></nz-option>
+      </nz-select>
+    </div>
+    <div nz-col nzSpan="12" class="right_part">
+      <button nz-button nzType="primary">发布</button>
+    </div>
+  </div>
   <div class="table_wrap">
     <nz-table #testTable nzSize="small" [nzData]="testData" [nzShowPagination]="false">
       <thead>
