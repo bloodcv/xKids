@@ -1,8 +1,13 @@
 .class_mg_wrap {
-  // padding: 5%;
-  .action_wrap {
-    button {
-      margin: 0 4px;
+  .table_wrap {
+    .action_wrap {
+      button {
+        margin: 0 4px;
+      }
     }
+  }
+  .page_wrap {
+    margin-top: 24px;
+    text-align: center;
   }
 }

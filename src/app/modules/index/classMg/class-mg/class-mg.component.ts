@@ -43,6 +43,12 @@ export class ClassMgComponent implements OnInit {
     }
   ];
 
+  public pageInfo: any = {
+    current: 3,
+    total: 150,
+    size: 15
+  }
+
   constructor() { }
 
   ngOnInit() {
