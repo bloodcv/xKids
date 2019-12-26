@@ -1,1 +1,58 @@
-<p>add-class works!</p>
+<div class="add_class_wrap">
+  <div class="form_wrap">
+    <form nz-form [nzNoColon]="true" [formGroup]="addClassForm" (ngSubmit)="submitForm(addClassForm.value)">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired nzFor="school">学校名称</nz-form-label>
+        <nz-form-control [nzSpan]="18" nzErrorTip="必选">
+          <nz-select id="school" formControlName="school" nzPlaceHolder="请选择学校">
+            <nz-option *ngFor="let item of schoolData" [nzValue]="item.value" [nzLabel]="item.label"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired nzFor="className">班级名称</nz-form-label>
+        <nz-form-control [nzSpan]="18" nzErrorTip="必填">
+          <input id="className" type="text" nz-input formControlName="className" placeholder="请输入" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired nzFor="classType">班级类别</nz-form-label>
+        <nz-form-control [nzSpan]="18" nzErrorTip="必选">
+          <nz-select id="classType" formControlName="classType" nzPlaceHolder="请选择班级">
+            <nz-option *ngFor="let item of classTypeData" [nzValue]="item.value" [nzLabel]="item.label"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired nzFor="classTeacher">班级讲师</nz-form-label>
+        <nz-form-control [nzSpan]="18" nzErrorTip="必选">
+          <nz-select id="classTeacher" formControlName="classTeacher" nzPlaceHolder="请选择类别">
+            <nz-option *ngFor="let item of classTeacherData" [nzValue]="item.value" [nzLabel]="item.label"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired nzFor="classHelper">班级助教</nz-form-label>
+        <nz-form-control [nzSpan]="18" nzErrorTip="必选">
+          <nz-select id="classHelper" formControlName="classHelper" nzPlaceHolder="请选择发布人">
+            <nz-option *ngFor="let item of classHelperData" [nzValue]="item.value" [nzLabel]="item.label"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired nzFor="description">说明</nz-form-label>
+        <nz-form-control [nzSpan]="18" nzErrorTip="必填">
+          <textarea id="description" nz-input formControlName="description" placeholder="请输入"
+            [nzAutosize]="{ minRows: 1, maxRows: 6 }"></textarea>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="add_class_form_button_wrap">
+        <nz-form-label [nzSpan]="6"></nz-form-label>
+        <nz-form-control [nzSpan]="18">
+          <button class="add_class_form_button" nz-button [nzType]="'primary'">保存</button>
+          <!-- <button class="add_class_form_button" nz-button [nzType]="'primary'">直接发布</button> -->
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</div>

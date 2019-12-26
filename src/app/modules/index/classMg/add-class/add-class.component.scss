@@ -1,0 +1,14 @@
+.add_class_wrap {
+  .form_wrap {
+    width: 20%;
+    min-width: 450px;
+    .add_class_form_button_wrap {
+      .add_class_form_button {
+        &:nth-child(1) {
+          margin-right: 10%;
+        }
+        width: 45%;
+      }
+    }
+  }
+}
