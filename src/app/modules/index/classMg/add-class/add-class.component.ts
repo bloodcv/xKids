@@ -26,25 +26,25 @@ export class AddClassComponent implements OnInit {
   public classTypeData: any[] = [
     {
       value: 1,
-      label: '一年级Python班'
+      label: 'NOIP1'
     }, {
       value: 2,
-      label: '二年级Python班'
+      label: 'NOIP2'
     }, {
       value: 3,
-      label: '三年级Python班'
+      label: 'NOIP3'
     }
   ];
   public classTeacherData: any[] = [
     {
       value: 1,
-      label: '小结'
+      label: '李老师'
     }, {
       value: 2,
-      label: '中结'
+      label: '王老师'
     }, {
       value: 3,
-      label: '大结'
+      label: '刘老师'
     }
   ];
   public classHelperData: any[] = [
