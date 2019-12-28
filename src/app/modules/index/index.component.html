@@ -6,8 +6,8 @@
     <nz-sider class="sider_wrap">
       <ul nz-menu nzMode="inline" nzTheme="dark">
         <!-- <li nz-menu-group [nzTitle]="item.title" *ngFor="let item of menuData"> -->
-          <ul *ngFor="let item of menuData" class="item_wrap">
-            <li nz-menu-item *ngFor="let itemIn of item.children; let idx = index">
+          <ul *ngFor="let item of menuData; let idx = index" class="item_wrap">
+            <li nz-menu-item *ngFor="let itemIn of item.children; let idxIn = index" [nzSelected]="idx == 0 && idxIn == 0">
               <a [routerLink]="[ itemIn.link ]" [routerLinkActive]="itemIn.activeClass">{{ itemIn.name }}</a>
             </li>
           </ul>

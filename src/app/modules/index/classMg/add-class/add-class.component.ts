@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UploadFile } from 'ng-zorro-antd/upload';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -60,22 +59,6 @@ export class AddClassComponent implements OnInit {
     }
   ];
 
-  showUploadList = {
-    showPreviewIcon: true,
-    showRemoveIcon: true,
-    hidePreviewIconInNonImage: true
-  };
-  fileList = [
-    {
-      uid: -1,
-      name: 'xxx.png',
-      status: 'done',
-      url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png'
-    }
-  ];
-  previewImage: string | undefined = '';
-  previewVisible = false;
-
   submitForm(value: any): void {
     for (const i in this.addClassForm.controls) {
       this.addClassForm.controls[i].markAsDirty();
@@ -96,10 +79,5 @@ export class AddClassComponent implements OnInit {
       description: [null, [Validators.required]] // 说明
     });
   }
-
-  handlePreview = (file: UploadFile) => {
-    this.previewImage = file.url || file.thumbUrl;
-    this.previewVisible = true;
-  };
 
 }

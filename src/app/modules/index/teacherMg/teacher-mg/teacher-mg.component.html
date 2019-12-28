@@ -1,1 +1,31 @@
-<p>teacher-mg works!</p>
+<div class="teacher_mg_wrap">
+  <div class="table_wrap">
+    <nz-table #testTable nzSize="small" [nzData]="testData" [nzShowPagination]="false">
+      <thead>
+        <tr>
+          <th nzAlign="center">编号</th>
+          <th>姓名</th>
+          <th>身份</th>
+          <th>电话</th>
+          <th nzAlign="center">管理</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of testTable.data">
+          <td nzAlign="center">{{ item.key }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.identity }}</td>
+          <td>{{ item.tel }}</td>
+          <td nzAlign="center" nzRight="0px" class="action_wrap">
+            <button nz-button nzType="primary" nzSize="small">设为助教</button>
+            <button nz-button nzType="primary" nzSize="small">编辑</button>
+            <button nz-button nzType="primary" nzSize="small">删除</button>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  <div class="page_wrap">
+    <nz-pagination [nzPageIndex]="pageInfo.current" [nzTotal]="pageInfo.total" [nzPageSize]="pageInfo.size" nzSize="small" nzShowQuickJumper></nz-pagination>
+  </div>
+</div>

@@ -1,1 +1,54 @@
-<p>add-teacher works!</p>
+<div class="add_teacher_wrap">
+  <div class="form_wrap">
+    <form nz-form [nzNoColon]="true" [formGroup]="addTeacherForm" (ngSubmit)="submitForm(addTeacherForm.value)">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired nzFor="name">姓名</nz-form-label>
+        <nz-form-control [nzSpan]="18" nzErrorTip="必填">
+          <input id="name" type="text" nz-input formControlName="name" placeholder="请输入" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired nzFor="sex">性别</nz-form-label>
+        <nz-form-control [nzSpan]="18" nzErrorTip="必选">
+          <nz-select id="sex" formControlName="sex" nzPlaceHolder="请选择">
+            <nz-option *ngFor="let item of sexData" [nzValue]="item.value" [nzLabel]="item.label"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired nzFor="tel">电话</nz-form-label>
+        <nz-form-control [nzSpan]="18" nzErrorTip="必填">
+          <input id="tel" type="text" nz-input formControlName="tel" placeholder="请输入" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired nzFor="password">密码</nz-form-label>
+        <nz-form-control [nzSpan]="18" nzErrorTip="必填">
+          <nz-input-group [nzSuffix]="suffixTemplate">
+            <input id="password" [type]="passwordVisible ? 'text' : 'password'" nz-input placeholder="请输入"
+              formControlName="password" />
+          </nz-input-group>
+          <ng-template #suffixTemplate>
+            <i nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'"
+              (click)="passwordVisible = !passwordVisible"></i>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired nzFor="identity">身份</nz-form-label>
+        <nz-form-control [nzSpan]="18" nzErrorTip="必选">
+          <nz-select id="identity" formControlName="identity" nzPlaceHolder="请选择">
+            <nz-option *ngFor="let item of identityData" [nzValue]="item.value" [nzLabel]="item.label"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="add_teacher_form_button_wrap">
+        <nz-form-label [nzSpan]="6"></nz-form-label>
+        <nz-form-control [nzSpan]="18">
+          <button class="add_teacher_form_button" nz-button [nzType]="'primary'">保存</button>
+          <!-- <button class="add_student_form_button" nz-button [nzType]="'primary'">直接发布</button> -->
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </div>
+</div>

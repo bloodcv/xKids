@@ -1,1 +1,38 @@
-<p>watch-parent works!</p>
+<div class="watch_parent_wrap">
+  <div nz-row class="head">
+    <div class="info_part">
+      <h2>学生姓名：{{ studentName }}</h2>
+      <h2>{{ className }}</h2>
+    </div>
+  </div>
+  <div class="table_wrap">
+    <nz-table #testTable nzSize="small" [nzData]="testData" [nzShowPagination]="false">
+      <thead>
+        <tr>
+          <th nzAlign="center">编号</th>
+          <th>家长姓名</th>
+          <th>关系</th>
+          <th>家长电话</th>
+          <th>状态</th>
+          <th nzAlign="center">管理</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of testTable.data">
+          <td nzAlign="center">{{ item.key }}</td>
+          <td>{{ item.parentName }}</td>
+          <td>{{ item.relation }}</td>
+          <td>{{ item.tel }}</td>
+          <td>{{ item.status }}</td>
+          <td nzAlign="center" nzRight="0px" class="action_wrap">
+            <button nz-button nzType="primary" nzSize="small">禁止</button>
+            <button nz-button nzType="primary" nzSize="small">删除</button>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  <div class="page_wrap">
+    <nz-pagination [nzPageIndex]="pageInfo.current" [nzTotal]="pageInfo.total" [nzPageSize]="pageInfo.size" nzSize="small" nzShowQuickJumper></nz-pagination>
+  </div>
+</div>

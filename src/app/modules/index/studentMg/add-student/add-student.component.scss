@@ -1,0 +1,21 @@
+.add_student_wrap {
+  .form_wrap {
+    width: 20%;
+    min-width: 450px;
+    .date_item {
+      ::ng-deep {
+        .ant-calendar-picker {
+          width: 100%;
+        }
+      }
+    }
+    .add_student_form_button_wrap {
+      .add_student_form_button {
+        &:nth-child(1) {
+          margin-right: 10%;
+        }
+        width: 45%;
+      }
+    }
+  }
+}

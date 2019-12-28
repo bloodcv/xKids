@@ -1,0 +1,25 @@
+.watch_parent_wrap {
+  .head {
+    margin-bottom: 24px;
+    .info_part {
+      display: flex;
+      h2 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #606266;
+        margin-right: 16px;
+      }
+    }
+  }
+  .table_wrap {
+    .action_wrap {
+      button {
+        margin: 0 4px;
+      }
+    }
+  }
+  .page_wrap {
+    margin-top: 24px;
+    text-align: center;
+  }
+}

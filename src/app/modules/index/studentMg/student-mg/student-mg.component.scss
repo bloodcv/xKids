@@ -1,0 +1,27 @@
+.student_mg_wrap {
+  .head {
+    margin-bottom: 24px;
+    nz-select {
+      font-size: 22px;
+      font-weight: 600;
+      min-width: 200px;
+      ::ng-deep {
+        .ant-select-selection {
+          border: unset;
+          box-shadow: unset;
+        }
+      }
+    }
+  }
+  .table_wrap {
+    .action_wrap {
+      button {
+        margin: 0 4px;
+      }
+    }
+  }
+  .page_wrap {
+    margin-top: 24px;
+    text-align: center;
+  }
+}

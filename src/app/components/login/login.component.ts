@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
       this.loginForm.controls[i].updateValueAndValidity();
     }
     console.log('提交数据', value)
-    
   }
 
   constructor(private fb: FormBuilder) {}
